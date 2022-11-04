@@ -15,17 +15,16 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-light bg-light">
-        <div class="nav navbar-nav">
-            <a class="nav-item nav-link" href="{% url 'inicio' %}">Inicio</a>
-            <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
-            <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="row">
             <div class="col-12">
+              <nav class="navbar navbar-expand navbar-dark" style="background-color: #06385c;">
+                <div class="nav navbar-nav">
+                    <a class="nav-item nav-link" href="{% url 'inicio' %}">Inicio</a>
+                    <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
+                </div>
+            </nav>
               <br>
                 {% block contenido%}   {% endblock %}
             </div>
