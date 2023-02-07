@@ -1,47 +1,120 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>{% block titulo%} {% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>{% block titulo%}   {% endblock %}</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #ffffff;
+      }
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: #c005e6e7;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    </style>
+  </head>
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-</head>
-
-<body>
+  <body>
+    <nav class="navbar navbar-expand navbar-dark" style="background-color: #7f00b2">
+      <div class="container"><a class="navbar-brand me-auto" href="https://www.unam.mx/">
+          <img
+            src="https://www.unam.mx/sites/all/themes/unam/logo.png"
+            height="100"
+            alt="MDB Logo"
+            loading="lazy"
+            style="margin-top: -1px"
+          />
+        </a>
+        <a class="navbar-brand ml-auto" href="https://www.unam.mx/">
+          <img
+            src="https://www.misalud.unam.mx/covid19/img/FP.png"
+            height="100"
+            loading="lazy"
+            style="margin-top: -1px"
+          />
+        </a>
+      </div>
+    </nav>
+    <nav
+      class="navbar navbar-expand navbar-dark"
+      style="background-color: #545155"
+    >
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="nav navbar-nav">
+          <li><a class="nav-item nav-link hover-underline-animation" href="{% url 'inicio' %}"><h5>Academicos</h5></a></li>
+          <li><a class="nav-item nav-link hover-underline-animation" href="{% url 'nosotros' %}"><h5>Administrativos</h5></a></li>
+          <li><a class="nav-item nav-link hover-underline-animation" href="{% url 'libros' %}"><h5>Cuerpos Colegiados</h5></a></li>
+          <li><a class="nav-item nav-link hover-underline-animation" href="{% url 'libros' %}"><h5>Emergencias</h5></a></li>
+        </ul>
+      </div>
+      <div class="navbar-brand me-5">
+        <button type="button" class="btn btn-primary">Acceder al Sistema</button>
+      </div>
+    </nav>
+    <!-- Navbar -->
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-              <nav class="navbar navbar-expand navbar-dark" style="background-color: #06385c;">
-                <div class="nav navbar-nav">
-                    <a class="nav-item nav-link" href="{% url 'inicio' %}">Inicio</a>
-                    <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
-                    <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
-                </div>
-            </nav>
-              <br>
-                {% block contenido%}   {% endblock %}
+      <div class="row">
+        <div class="col-12">
+          <br/>
+
+          {% block contenido%} {% endblock %}
+
+          <footer
+            class="text-center text-white fixed-bottom"
+            style="background-color: #7e0996"
+          >
+            <!-- Grid container -->
+            <div class="container p-4"></div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+              <a class="text-white" href="">Unidad de Planeación</a>
             </div>
+            <!-- Copyright -->
+          </footer>
         </div>
+      </div>
     </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
 
-
-
-
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

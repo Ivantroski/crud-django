@@ -1,0 +1,8 @@
+              <nav class="navbar navbar-expand navbar-dark" style="background-color: #06385c;">
+                <div class="nav navbar-nav">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.misalud.unam.mx%2F&psig=AOvVaw3yiQ0pWaARTlBktOV32Ecz&ust=1670620318708000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIiO6uj36vsCFQAAAAAdAAAAABAD" alt="">
+                    <a class="nav-item nav-link" href="{% url 'inicio' %}">Inicio</a>
+                    <a class="nav-item nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    <a class="nav-item nav-link" href="{% url 'libros' %}">Libros</a>
+                </div>
+            </nav>
